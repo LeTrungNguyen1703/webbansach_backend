@@ -23,10 +23,10 @@ public class DonHang {
     @Column(name = "ngay_tao")
     private Date ngayTao;
 
-    @Column(name = "dia_chi_mua_hang")
+    @Column(name = "dia_chi_mua_hang", length = 512)
     private String diaChiMuaHang;
 
-    @Column(name = "dia_chi_nhan_hang")
+    @Column(name = "dia_chi_nhan_hang", length = 512)
     private String diaChiNhanHang;
 
     @Column(name = "tong_tien_san_pham")
@@ -38,6 +38,7 @@ public class DonHang {
     @Column(name = "tong_tien")
     private double tongTien;
 
+    @OneToMany(mappedBy = "don_hang", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<ChiTietDonHang> danhSachChiTietDonHang;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {
@@ -47,9 +48,20 @@ public class DonHang {
     @JoinColumn(name = "ma_nguoi_dung", nullable = false)
     private NguoiDung nguoiDung;
 
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {
+            CascadeType.DETACH, CascadeType.MERGE,
+            CascadeType.PERSIST, CascadeType.REFRESH,
+    })
+    @JoinColumn(name = "ma_hinh_thuc_thanh_toan")
     private HinhThucThanhToan hinhThucThanhToan;
 
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {
+            CascadeType.DETACH, CascadeType.MERGE,
+            CascadeType.PERSIST, CascadeType.REFRESH,
+    })
+    @JoinColumn(name = "ma_hinh_thuc_giao_hang")
     private HinhThucGiaoHang hinhThucGiaoHang;
 
-
+    public DonHang() {
+    }
 }

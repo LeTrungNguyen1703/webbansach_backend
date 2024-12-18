@@ -20,6 +20,8 @@ public class TheLoai {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_the_loai")
     private int maTheLoai;
+
+    @Column(name = "ten_the_loai")
     private String tenTheLoai;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {

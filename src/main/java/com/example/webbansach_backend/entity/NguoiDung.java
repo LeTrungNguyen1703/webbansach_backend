@@ -52,7 +52,7 @@ public class NguoiDung {
     })
     private List<SuDanhGia> danhsachSuDanhGia;
 
-    @OneToMany(mappedBy = "sach",fetch = FetchType.LAZY, cascade = {
+    @OneToMany(mappedBy = "nguoi_dung",fetch = FetchType.LAZY, cascade = {
             CascadeType.DETACH, CascadeType.MERGE,
             CascadeType.PERSIST, CascadeType.REFRESH
     })
@@ -69,7 +69,7 @@ public class NguoiDung {
     )
     private List<Quyen> danhSachQuyen;
 
-    @OneToMany(mappedBy = "sach",fetch = FetchType.LAZY, cascade = {
+    @OneToMany(mappedBy = "nguoi_dung",fetch = FetchType.LAZY, cascade = {
             CascadeType.DETACH, CascadeType.MERGE,
             CascadeType.PERSIST, CascadeType.REFRESH
     })
