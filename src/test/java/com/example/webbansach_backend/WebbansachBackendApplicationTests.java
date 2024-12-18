@@ -10,7 +10,11 @@ class WebbansachBackendApplicationTests {
 	@Test
 	void contextLoads() {
 
-		TheLoai theLoai = new TheLoai();
+		TheLoai theLoai = TheLoai.builder()
+				.maTheLoai(1)
+				.tenTheLoai("chu ba bi")
+				.build();
+		System.out.println(theLoai);
 	}
 
 }
