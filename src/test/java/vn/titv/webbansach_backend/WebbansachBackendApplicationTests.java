@@ -1,6 +1,5 @@
-package com.example.webbansach_backend;
+package vn.titv.webbansach_backend;
 
-import com.example.webbansach_backend.entity.TheLoai;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -10,7 +9,6 @@ class WebbansachBackendApplicationTests {
 	@Test
 	void contextLoads() {
 
-		TheLoai theLoai = new TheLoai();
 	}
 
 }

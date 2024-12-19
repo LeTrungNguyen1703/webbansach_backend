@@ -1,4 +1,4 @@
-package com.example.webbansach_backend;
+package vn.titv.webbansach_backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
